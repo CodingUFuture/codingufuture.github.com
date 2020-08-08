@@ -1,4 +1,46 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-08-08T16:14:13+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">分享你的知识</title><subtitle>知识分享，优秀项目分享.</subtitle><entry><title type="html">VUE 集成BPMN-JS（hello world）</title><link href="http://localhost:4000/%E5%89%8D%E7%AB%AF/2020/08/08/VUE%E4%BD%BF%E7%94%A8bpmn.html" rel="alternate" type="text/html" title="VUE 集成BPMN-JS（hello world）" /><published>2020-08-08T13:48:09+08:00</published><updated>2020-08-08T13:48:09+08:00</updated><id>http://localhost:4000/%E5%89%8D%E7%AB%AF/2020/08/08/VUE%E4%BD%BF%E7%94%A8bpmn</id><content type="html" xml:base="http://localhost:4000/%E5%89%8D%E7%AB%AF/2020/08/08/VUE%E4%BD%BF%E7%94%A8bpmn.html">&lt;p&gt;背景：&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-08-08T16:31:37+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">分享你的知识</title><subtitle>知识分享，优秀项目分享.</subtitle><entry><title type="html">Mybatis调用Oracle存储过程</title><link href="http://localhost:4000/%E5%90%8E%E7%AB%AF/2020/08/08/Mybatis%E8%B0%83%E7%94%A8Oracle%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B.html" rel="alternate" type="text/html" title="Mybatis调用Oracle存储过程" /><published>2020-08-08T13:48:09+08:00</published><updated>2020-08-08T13:48:09+08:00</updated><id>http://localhost:4000/%E5%90%8E%E7%AB%AF/2020/08/08/Mybatis%E8%B0%83%E7%94%A8Oracle%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B</id><content type="html" xml:base="http://localhost:4000/%E5%90%8E%E7%AB%AF/2020/08/08/Mybatis%E8%B0%83%E7%94%A8Oracle%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B.html">&lt;p&gt;框架： spring boot + mybatis + oracle 数据库&lt;/p&gt;
+
+&lt;p&gt;报错：
+the error occurred while setting parameters&lt;/p&gt;
+
+&lt;p&gt;或者
+Malformed SQL92 string at position x&lt;/p&gt;
+
+&lt;p&gt;检查&lt;/p&gt;
+
+&lt;p&gt;如果确认在mybatis 的mapper.xml 文件中配置正确的话，那可以试着把&amp;lt;![CDATA[ ]]&amp;gt;，加上即可。
+最终mapper 文件内容如下（parameterType = map 这属性即为 java.util.map 存储过程和函数一般都以map方式进行传输，
+使用 update 是因为内容涉及DML，如果没有数据变更事务使用select 方式也可以）&lt;/p&gt;
+
+&lt;p&gt;例如这里我调用的是 函数：&lt;/p&gt;
+
+&lt;update id=&quot;saveUser&quot; parameterType=&quot;map&quot; statementType=&quot;CALLABLE&quot;&gt;
+&amp;lt;![CDATA[
+{ #{res,mode=OUT,jdbcType = VARCHAR} = call sync_pgk.func_sync_user(
+#{userId,mode=IN,jdbcType = DECIMAL},
+#{enabledFlag ,mode=IN,jdbcType = VARCHAR},
+#{masterOrg,mode=IN,jdbcType = VARCHAR} )
+}
+]]&amp;gt;
+&lt;/update&gt;
+
+&lt;p&gt;如果是调用的存储过程，无需设置返回值&lt;/p&gt;
+
+&lt;update id=&quot;saveUser&quot; parameterType=&quot;map&quot; statementType=&quot;CALLABLE&quot;&gt;
+&amp;lt;![CDATA[
+{ call sync_pgk.func_sync_user(
+#{userId,mode=IN,jdbcType = DECIMAL},
+#{enabledFlag ,mode=IN,jdbcType = VARCHAR},
+#{masterOrg,mode=IN,jdbcType = VARCHAR} )
+}
+]]&amp;gt;
+&lt;/update&gt;
+
+&lt;p&gt;DAO文件内方法&lt;/p&gt;
+
+&lt;p&gt;void saveUser(Map&amp;lt;String,Object&amp;gt; param);&lt;/p&gt;
+
+&lt;p&gt;调用后，如果需要res 返回值， 使用param.get(“res”) 即可。&lt;/p&gt;</content><author><name></name></author><category term="后端" /><summary type="html">框架： spring boot + mybatis + oracle 数据库</summary></entry><entry><title type="html">VUE 集成BPMN-JS（hello world）</title><link href="http://localhost:4000/%E5%89%8D%E7%AB%AF/2020/08/08/VUE%E4%BD%BF%E7%94%A8bpmn.html" rel="alternate" type="text/html" title="VUE 集成BPMN-JS（hello world）" /><published>2020-08-08T13:48:09+08:00</published><updated>2020-08-08T13:48:09+08:00</updated><id>http://localhost:4000/%E5%89%8D%E7%AB%AF/2020/08/08/VUE%E4%BD%BF%E7%94%A8bpmn</id><content type="html" xml:base="http://localhost:4000/%E5%89%8D%E7%AB%AF/2020/08/08/VUE%E4%BD%BF%E7%94%A8bpmn.html">&lt;p&gt;背景：&lt;/p&gt;
 
 &lt;p&gt;因为个人之前没有VUE甚至是前端框架的开发经验，需要从0开始创建应用并简单集成bpmn-js&lt;/p&gt;
 
