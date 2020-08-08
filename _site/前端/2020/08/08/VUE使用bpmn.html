@@ -3,17 +3,19 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>About | 分享你的知识</title>
+<title>VUE 集成BPMN-JS（hello world） | 分享你的知识</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="About" />
+<meta property="og:title" content="VUE 集成BPMN-JS（hello world）" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="知识分享，优秀项目分享." />
-<meta property="og:description" content="知识分享，优秀项目分享." />
-<link rel="canonical" href="http://localhost:4000/about/" />
-<meta property="og:url" content="http://localhost:4000/about/" />
+<meta name="description" content="背景：" />
+<meta property="og:description" content="背景：" />
+<link rel="canonical" href="http://localhost:4000/%E5%89%8D%E7%AB%AF/2020/08/08/VUE%E4%BD%BF%E7%94%A8bpmn.html" />
+<meta property="og:url" content="http://localhost:4000/%E5%89%8D%E7%AB%AF/2020/08/08/VUE%E4%BD%BF%E7%94%A8bpmn.html" />
 <meta property="og:site_name" content="分享你的知识" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-08-08T13:48:09+08:00" />
 <script type="application/ld+json">
-{"description":"知识分享，优秀项目分享.","url":"http://localhost:4000/about/","@type":"WebSite","name":"分享你的知识","headline":"About","@context":"https://schema.org"}</script>
+{"dateModified":"2020-08-08T13:48:09+08:00","datePublished":"2020-08-08T13:48:09+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/%E5%89%8D%E7%AB%AF/2020/08/08/VUE%E4%BD%BF%E7%94%A8bpmn.html"},"description":"背景：","url":"http://localhost:4000/%E5%89%8D%E7%AB%AF/2020/08/08/VUE%E4%BD%BF%E7%94%A8bpmn.html","@type":"BlogPosting","headline":"VUE 集成BPMN-JS（hello world）","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="分享你的知识" /></head>
 <body><header class="site-header" role="banner">
@@ -33,26 +35,51 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title">About</h1>
+    <h1 class="post-title p-name" itemprop="name headline">VUE 集成BPMN-JS（hello world）</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2020-08-08T13:48:09+08:00" itemprop="datePublished">Aug 8, 2020
+      </time></p>
   </header>
 
-  <div class="post-content">
-    <p>This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at <a href="https://jekyllrb.com/">jekyllrb.com</a></p>
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>背景：</p>
 
-<p>You can find the source code for Minima at GitHub:
-<a href="https://github.com/jekyll">jekyll</a> /
-<a href="https://github.com/jekyll/minima">minima</a></p>
+<p>因为个人之前没有VUE甚至是前端框架的开发经验，需要从0开始创建应用并简单集成bpmn-js</p>
 
-<p>You can find the source code for Jekyll at GitHub:
-<a href="https://github.com/jekyll">jekyll</a> /
-<a href="https://github.com/jekyll/jekyll">jekyll</a></p>
+<p>需要了解bpmn-js的用途的，可以自行百度或者在其官网上进行查看 bpmn.io</p>
 
+<p>一、构建基础应用，并引入nodeModule依赖</p>
 
-  </div>
+<p>首先是构建VUE应用，这一点如果有VUE基础的小伙伴们，可以直接跳过忽略。（使用vue、npm 命令需要先安装nodejs环境以及vue脚手架，安装可以自行百度）</p>
 
+<p>1、使用vue webpack 构建一个新的项目
+vue init webpack bpmn-js-demo</p>
+
+<p>2、使用npm命令进行添加依赖 进入bpmn-js-demo目录下</p>
+
+<p>npm install bpmn-js
+npm install bpmn-js-properties-panle
+npm install camunda-bpmn-moddle</p>
+
+<p>二、创建示例文件，修改路由进行跳转
+1、在src目录下新建 BpmnDemo.vue文件，添加以下内容</p>
+
+<p>https://paste.ubuntu.com/p/QFPBy6Q6DS/</p>
+
+<p>2、修改路由进行跳转，打开src/router/index.js文件修改</p>
+
+<p>https://paste.ubuntu.com/p/Z9HGV66rpp/</p>
+
+<p>三、编译运行</p>
+
+<p>npm run dev</p>
+
+<p>打开 localhost:8080/ 进行查看效果</p>
+
+  </div><a class="u-url" href="/%E5%89%8D%E7%AB%AF/2020/08/08/VUE%E4%BD%BF%E7%94%A8bpmn.html" hidden></a>
 </article>
 
       </div>

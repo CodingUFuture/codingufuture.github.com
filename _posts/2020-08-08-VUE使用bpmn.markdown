@@ -1,0 +1,39 @@
+---
+layout: post
+title:  "VUE 集成BPMN-JS（hello world）"
+date:   2020-08-08 13:48:09 +0800
+categories: 前端
+---
+背景：
+
+因为个人之前没有VUE甚至是前端框架的开发经验，需要从0开始创建应用并简单集成bpmn-js
+
+需要了解bpmn-js的用途的，可以自行百度或者在其官网上进行查看 bpmn.io
+
+一、构建基础应用，并引入nodeModule依赖
+
+首先是构建VUE应用，这一点如果有VUE基础的小伙伴们，可以直接跳过忽略。（使用vue、npm 命令需要先安装nodejs环境以及vue脚手架，安装可以自行百度）
+
+1、使用vue webpack 构建一个新的项目
+vue init webpack bpmn-js-demo
+
+2、使用npm命令进行添加依赖 进入bpmn-js-demo目录下
+
+npm install bpmn-js
+npm install bpmn-js-properties-panle
+npm install camunda-bpmn-moddle
+
+二、创建示例文件，修改路由进行跳转
+1、在src目录下新建 BpmnDemo.vue文件，添加以下内容
+
+https://paste.ubuntu.com/p/QFPBy6Q6DS/
+
+2、修改路由进行跳转，打开src/router/index.js文件修改
+
+https://paste.ubuntu.com/p/Z9HGV66rpp/
+
+三、编译运行
+
+npm run dev
+
+打开 localhost:8080/ 进行查看效果
