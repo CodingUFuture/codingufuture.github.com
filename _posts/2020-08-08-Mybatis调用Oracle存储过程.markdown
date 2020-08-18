@@ -3,6 +3,8 @@ layout: post
 title:  "Mybatis调用Oracle存储过程"
 date:   2020-08-08 13:48:09 +0800
 categories: 后端
+tags:
+    mybatis,java,oracle
 ---
 框架： spring boot + mybatis + oracle 数据库
 
