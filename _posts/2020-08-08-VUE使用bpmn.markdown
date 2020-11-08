@@ -3,6 +3,7 @@ layout: post
 title:  "VUE 集成BPMN-JS（hello world）"
 date:   2020-08-08 13:48:09 +0800
 categories: 前端
+tags:   vue,bpmn
 ---
 背景：
 
